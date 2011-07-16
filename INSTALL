@@ -3,16 +3,16 @@ INSTALLATION INSTRUCTIONS
 Quick Start
 -----------
 
-Download source code:
+Download:
 
   $ git clone git://github.com/StepanKuzmin/zenwriter.git
 
-Build:
+Install:
 
   $ cd zenwriter
   $ qmake
   $ make
 
-Run:
+Usage:
 
   $ ./zenwriter

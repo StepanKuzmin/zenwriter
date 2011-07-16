@@ -9,7 +9,7 @@ Download
     git clone git://github.com/StepanKuzmin/zenwriter.git
 
 
-Installation
+Install
 -----------
 
     cd zenwriter
@@ -20,4 +20,4 @@ Installation
 Usage
 -----
 
-    ./zenwrier
+    ./zenwriter
