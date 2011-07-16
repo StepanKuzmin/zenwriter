@@ -1,0 +1,18 @@
+INSTALLATION INSTRUCTIONS
+
+Quick Start
+-----------
+
+Download source code:
+
+  $ git clone git://github.com/StepanKuzmin/zenwriter.git
+
+Build:
+
+  $ cd zenwriter
+  $ qmake
+  $ make
+
+Run:
+
+  $ ./zenwriter

@@ -1,1 +1,6 @@
+*.o
+moc*
 *.user
+Makefile
+zenwriter
+ui_zenwriter.h
