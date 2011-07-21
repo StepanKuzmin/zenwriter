@@ -6,17 +6,39 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>442</width>
-    <height>348</height>
+    <width>494</width>
+    <height>359</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ZenWriter</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QPlainTextEdit" name="plainTextEdit"/>
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="font">
+       <font>
+        <family>Droid Sans</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="backgroundVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -25,8 +47,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>442</width>
-     <height>23</height>
+     <width>494</width>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

@@ -6,6 +6,8 @@ ZenWriter::ZenWriter(QWidget *parent) :
     ui(new Ui::ZenWriter)
 {
     ui->setupUi(this);
+    ui->plainTextEdit->setFrameShape(QFrame::NoFrame);
+    ui->plainTextEdit->setStyleSheet("border: 1px dotted grey; border-radius: 4;");
 }
 
 ZenWriter::~ZenWriter()
