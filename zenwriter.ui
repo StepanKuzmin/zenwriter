@@ -6,17 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>494</width>
-    <height>359</height>
+    <width>1024</width>
+    <height>680</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ZenWriter</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QPlainTextEdit" name="plainTextEdit">
@@ -28,7 +28,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">border: 1px dotted grey;
-border-radius: 4;</string>
+border-radius: 5; background: transparent;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -54,6 +54,12 @@ border-radius: 4;</string>
      <width>494</width>
      <height>19</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
    </property>
    <widget class="QMenu" name="menu_File">
     <property name="title">

@@ -4,3 +4,4 @@ moc*
 Makefile
 zenwriter
 ui_zenwriter.h
+qrc_zenwriter.cpp
