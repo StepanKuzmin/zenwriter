@@ -7,10 +7,12 @@ int main(int argc, char *argv[])
     ZenWriter w;
 
     // Set default background
+    /*
     QPalette palette;
     QString appDir = QApplication::applicationDirPath();
     palette.setBrush(w.backgroundRole(),QBrush(QImage(appDir +"/images/winter.jpg")));
     w.setPalette(palette);
+    */
     
     w.show();
     //w.showFullScreen();

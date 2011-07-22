@@ -25,6 +25,8 @@ private slots:
 
     void on_actionSave_as_activated();
 
+    void on_actionQuit_activated();
+
 private:
     QFile file;
     Ui::ZenWriter *ui;

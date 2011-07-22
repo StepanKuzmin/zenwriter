@@ -42,3 +42,8 @@ void ZenWriter::on_actionSave_as_activated()
     this->file.setFileName(fileName);
     on_actionSave_activated();
 }
+
+void ZenWriter::on_actionQuit_activated()
+{
+    qApp->quit();
+}
