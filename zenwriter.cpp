@@ -34,6 +34,9 @@ void ZenWriter::on_actionSave_activated()
         out << ui->plainTextEdit->toPlainText();
         this->file.close();
     }
+    else {
+        on_actionSave_as_activated();
+    }
 }
 
 void ZenWriter::on_actionSave_as_activated()
