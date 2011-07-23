@@ -6,6 +6,8 @@ ZenWriter::ZenWriter(QWidget *parent) :
     ui(new Ui::ZenWriter)
 {
     ui->setupUi(this);
+    this->typewriter = Phonon::createPlayer(Phonon::MusicCategory,
+                                            Phonon::MediaSource("sounds/typewriter.wav"));
 }
 
 ZenWriter::~ZenWriter()
@@ -44,6 +46,11 @@ void ZenWriter::on_actionSave_as_activated()
     QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "", tr("Text (*.txt)"));
     this->file.setFileName(fileName);
     on_actionSave_activated();
+}
+
+void ZenWriter::on_plainTextEdit_cursorPositionChanged()
+{
+    this->typewriter->play();
 }
 
 void ZenWriter::on_actionQuit_activated()

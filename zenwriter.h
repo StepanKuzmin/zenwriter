@@ -5,6 +5,7 @@
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMainWindow>
+#include <phonon/mediaobject.h>
 
 namespace Ui {
     class ZenWriter;
@@ -27,9 +28,12 @@ private slots:
 
     void on_actionQuit_activated();
 
+    void on_plainTextEdit_cursorPositionChanged();
+
 private:
     QFile file;
     Ui::ZenWriter *ui;
+    Phonon::MediaObject *typewriter;
 };
 
 #endif // ZENWRITER_H
