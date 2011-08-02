@@ -48,7 +48,7 @@ void ZenWriter::on_actionSave_as_activated()
     on_actionSave_activated();
 }
 
-void ZenWriter::on_plainTextEdit_cursorPositionChanged()
+void ZenWriter::on_plainTextEdit_textChanged()
 {
     this->typewriter->play();
 }

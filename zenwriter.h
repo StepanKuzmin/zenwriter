@@ -28,7 +28,7 @@ private slots:
 
     void on_actionQuit_activated();
 
-    void on_plainTextEdit_cursorPositionChanged();
+    void on_plainTextEdit_textChanged();
 
 private:
     QFile file;
