@@ -28,12 +28,17 @@ private slots:
 
     void on_switchFullScreenButton_clicked();
 
-    void on_fontSizeLess_clicked();
+    void on_plainTextEdit_textChanged();
 
-    void on_fontSizeMore_clicked();
+    void on_fontSizeLessButton_clicked();
+
+    void on_fontSizeMoreButton_clicked();
+
+    void mouseMoveEvent(QMouseEvent *event);
 
 private:
     QFile file;
+    bool isWriteMode;
     bool isFullScreen;
     Ui::ZenWriter *ui;
 };

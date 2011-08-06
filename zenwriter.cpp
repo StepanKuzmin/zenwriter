@@ -5,8 +5,9 @@ ZenWriter::ZenWriter(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ZenWriter)
 {
-    this->isFullScreen = false;
     ui->setupUi(this);
+    this->isWriteMode = false;
+    this->isFullScreen = false;
 }
 
 ZenWriter::~ZenWriter()
@@ -64,7 +65,7 @@ void ZenWriter::on_openButton_clicked()
     }
 }
 
-void ZenWriter::on_fontSizeLess_clicked()
+void ZenWriter::on_fontSizeLessButton_clicked()
 {
     QFont font = ui->plainTextEdit->font();
     if (font.pointSize() > 8) {
@@ -73,11 +74,27 @@ void ZenWriter::on_fontSizeLess_clicked()
     }
 }
 
-void ZenWriter::on_fontSizeMore_clicked()
+void ZenWriter::on_fontSizeMoreButton_clicked()
 {
     QFont font = ui->plainTextEdit->font();
     if (font.pointSize() < 72) {
         font.setPointSize(font.pointSize() + 2);
         ui->plainTextEdit->setFont(font);
+    }
+}
+
+void ZenWriter::on_plainTextEdit_textChanged()
+{
+    if (!this->isWriteMode) {
+        ui->frame->setVisible(false);
+        this->isWriteMode = true;
+    }
+}
+
+void ZenWriter::mouseMoveEvent(QMouseEvent *event)
+{
+    if (this->isWriteMode) {
+        ui->frame->setVisible(true);
+        this->isWriteMode = false;
     }
 }
