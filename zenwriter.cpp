@@ -28,6 +28,12 @@ void ZenWriter::on_switchFullScreenButton_clicked()
     }
 }
 
+void ZenWriter::on_newButton_clicked()
+{
+    this->file.setFileName(NULL);
+    this->ui->plainTextEdit->setPlainText(NULL);
+}
+
 void ZenWriter::on_saveButton_clicked()
 {
     if (this->file.fileName().isEmpty()) {
@@ -55,5 +61,23 @@ void ZenWriter::on_openButton_clicked()
             return;
         ui->plainTextEdit->setPlainText(this->file.readAll());
         this->file.close();
+    }
+}
+
+void ZenWriter::on_fontSizeLess_clicked()
+{
+    QFont font = ui->plainTextEdit->font();
+    if (font.pointSize() > 8) {
+        font.setPointSize(font.pointSize() - 2);
+        ui->plainTextEdit->setFont(font);
+    }
+}
+
+void ZenWriter::on_fontSizeMore_clicked()
+{
+    QFont font = ui->plainTextEdit->font();
+    if (font.pointSize() < 72) {
+        font.setPointSize(font.pointSize() + 2);
+        ui->plainTextEdit->setFont(font);
     }
 }

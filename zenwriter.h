@@ -19,11 +19,18 @@ public:
     ~ZenWriter();
 
 private slots:
-    void on_switchFullScreenButton_clicked();
+
+    void on_newButton_clicked();
 
     void on_saveButton_clicked();
 
     void on_openButton_clicked();
+
+    void on_switchFullScreenButton_clicked();
+
+    void on_fontSizeLess_clicked();
+
+    void on_fontSizeMore_clicked();
 
 private:
     QFile file;

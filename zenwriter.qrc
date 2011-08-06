@@ -6,6 +6,8 @@
     <file>icons/save.svg</file>
     <file>icons/mute.svg</file>
     <file>icons/speaker.svg</file>
+    <file>icons/font-size-more.png</file>
+    <file>icons/font-size-less.png</file>
     <file>icons/fullscreen.svg</file>
   </qresource>
 </RCC>

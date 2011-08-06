@@ -15,7 +15,13 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QPlainTextEdit" name="plainTextEdit"/>
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -72,7 +78,24 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="1" column="1">
+        <widget class="QPushButton" name="fontSizeMore">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="zenwriter.qrc">
+           <normaloff>:/icons/font-size-more.png</normaloff>:/icons/font-size-more.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
         <widget class="QPushButton" name="switchFullScreenButton">
          <property name="text">
           <string/>
@@ -80,6 +103,23 @@
          <property name="icon">
           <iconset resource="zenwriter.qrc">
            <normaloff>:/icons/fullscreen.svg</normaloff>:/icons/fullscreen.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="fontSizeLess">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="zenwriter.qrc">
+           <normaloff>:/icons/font-size-less.png</normaloff>:/icons/font-size-less.png</iconset>
          </property>
          <property name="iconSize">
           <size>
