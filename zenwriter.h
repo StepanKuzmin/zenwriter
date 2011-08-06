@@ -2,16 +2,15 @@
 #define ZENWRITER_H
 
 #include <QFile>
+#include <QWidget>
 #include <QFileDialog>
 #include <QTextStream>
-#include <QMainWindow>
-#include <phonon/mediaobject.h>
 
 namespace Ui {
     class ZenWriter;
 }
 
-class ZenWriter : public QMainWindow
+class ZenWriter : public QWidget
 {
     Q_OBJECT
 
@@ -20,20 +19,16 @@ public:
     ~ZenWriter();
 
 private slots:
-    void on_actionSave_activated();
+    void on_switchFullScreenButton_clicked();
 
-    void on_actionOpen_activated();
+    void on_saveButton_clicked();
 
-    void on_actionSave_as_activated();
-
-    void on_actionQuit_activated();
-
-    void on_plainTextEdit_textChanged();
+    void on_openButton_clicked();
 
 private:
     QFile file;
+    bool isFullScreen;
     Ui::ZenWriter *ui;
-    Phonon::MediaObject *typewriter;
 };
 
 #endif // ZENWRITER_H
