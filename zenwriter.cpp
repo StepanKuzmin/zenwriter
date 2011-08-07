@@ -6,6 +6,7 @@ ZenWriter::ZenWriter(QWidget *parent) :
     ui(new Ui::ZenWriter)
 {
     ui->setupUi(this);
+    this->isModified = false;
     this->isWriteMode = false;
     this->isFullScreen = false;
 }
@@ -20,12 +21,12 @@ void ZenWriter::on_switchFullScreenButton_clicked()
     if (this->isFullScreen) {
         ZenWriter::showNormal();
         this->isFullScreen = false;
-        this->ui->switchFullScreenButton->setIcon(QIcon("icons/fullscreen.svg"));
+        //this->ui->switchFullScreenButton->setIcon(QIcon("icons/fullscreen.svg"));
     }
     else {
         ZenWriter::showFullScreen();
         this->isFullScreen = true;
-        this->ui->switchFullScreenButton->setIcon(QIcon("icons/fn.svg"));
+        //this->ui->switchFullScreenButton->setIcon(QIcon("icons/unfullscreen.svg"));
     }
 }
 
@@ -33,6 +34,7 @@ void ZenWriter::on_newButton_clicked()
 {
     this->file.setFileName(NULL);
     this->ui->plainTextEdit->setPlainText(NULL);
+    this->isModified = false;
 }
 
 void ZenWriter::on_saveButton_clicked()
@@ -49,6 +51,7 @@ void ZenWriter::on_saveButton_clicked()
             QTextStream out(&this->file);
             out << ui->plainTextEdit->toPlainText();
             this->file.close();
+            this->isModified = false;
         }
     }
 }
@@ -62,6 +65,7 @@ void ZenWriter::on_openButton_clicked()
             return;
         ui->plainTextEdit->setPlainText(this->file.readAll());
         this->file.close();
+        this->isModified = false;
     }
 }
 
@@ -89,6 +93,7 @@ void ZenWriter::on_plainTextEdit_textChanged()
         ui->frame->setVisible(false);
         this->isWriteMode = true;
     }
+    this->isModified = true;
 }
 
 void ZenWriter::mouseMoveEvent(QMouseEvent *event)
@@ -96,5 +101,29 @@ void ZenWriter::mouseMoveEvent(QMouseEvent *event)
     if (this->isWriteMode) {
         ui->frame->setVisible(true);
         this->isWriteMode = false;
+    }
+}
+
+void ZenWriter::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Escape && this->isModified) {
+        QMessageBox messageBox;
+        messageBox.setText(tr("The ZenWriter contains unsaved changes."));
+        messageBox.setIcon(QMessageBox::Warning);
+        messageBox.setInformativeText(tr("Do you want to save them before exiting?"));
+        messageBox.setStandardButtons(QMessageBox::Save | QMessageBox::Cancel);
+        messageBox.setDefaultButton(QMessageBox::Save);
+        int ret = messageBox.exec();
+
+        switch (ret) {
+            case QMessageBox::Save:
+                on_saveButton_clicked();
+                qApp->quit();
+            break;
+            case QMessageBox::Cancel:
+                qApp->quit();
+            break;
+            default: break;
+        }
     }
 }

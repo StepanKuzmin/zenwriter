@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QMessageBox>
 
 namespace Ui {
     class ZenWriter;
@@ -36,8 +37,11 @@ private slots:
 
     void mouseMoveEvent(QMouseEvent *event);
 
+    void keyPressEvent(QKeyEvent *event);
+
 private:
     QFile file;
+    bool isModified;
     bool isWriteMode;
     bool isFullScreen;
     Ui::ZenWriter *ui;
